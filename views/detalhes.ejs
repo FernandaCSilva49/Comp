@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" href="../img/comp.png"/>
+
+    <title> Comp | Detalhes </title>
+</head>
+<body id="bodyd">
+    <header id="headerd" >
+        <div>
+            <img src="../img/comp3.png" width="90" height="80">
+        </div>
+        <div id="divd">
+            <a class="btnc1" href="/lista-campeoes"> Lista de campeões </a></button> 
+            <p class="btnc1"> | </p>
+            <a class="btnc1" id="home" href="/"> Home </a></button> 
+            <p class="btnc1"> | </p>
+            <a class="btnc1" href="/cadastro" id="cad"> Cadastro </a></button>
+        </div>
+    </header>
+
+    <h1 id="h1d"> Informações do Campeão </h1>
+
+    <section id="">
+        
+        <div id="infod" href="/detalhes/">
+            
+            <div class="textd" id="textd1">
+                <img id="img1" src="<%= campeao.imagem %>" width="350" height="350" alt="">
+             </div>
+                
+                <div class="textd" id="textd2">
+                    <div class="infod1">Nome: <%= campeao.nome %> </div>
+                    <div class="infod1">Idade: <%= campeao.idade %></div>
+                    <div class="infod1">Gênero: <%= campeao.genero%></div>
+                    <div class="infod1">Dano: <%= campeao.dano %></div>
+                    <div class="infod1">Arma: <%= campeao.arma %></div>
+                </div>
+        
+        </div>
+     
+    </section>
+
+    <div id="botaoe">
+        <a id="edit" href="/editar/<%= campeao.id %>"> <button id="det"> Editar </button> </a>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

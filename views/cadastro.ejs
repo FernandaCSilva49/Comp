@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" href="./img/comp.png"/>
+
+    <title>Comp | cadastro</title>
+</head>
+<body id="body1">
+    <header id="header">
+        <div>
+            <img id="imgc" src="./img/comp2.png" width="80" height="80" class="imgr">
+        </div>
+        <div id="divc">
+            <a class="btnc" href="/lista-campeoes"> Lista de campeões </a></button> 
+            <p class="btnc"> | </p>
+            <a class="btnc" href="/" id="spç"> Home </a></button> 
+        </div>
+    </header>
+
+    <h1 id="h1c"> Cadastre seu campeão</h1>
+
+    <main id="main">
+
+        <article id="sona">
+            <h1 class="espç" id="h1c1"> Mas o que é dano mágico e dano físico?</h1>
+            <img class="espç" id="imgc" src="/img/sona.png" width="100" height="100">
+            <p class="espç"> O dano mágico é magia, obviamente, o dano sofrido pelo seu oponente é baseado em habilidades mágicas, seja ela qual for. Feitiços, bruxaria, magia negra ou sagrada.</p>
+            <p class="espç"> O dano físico não envolve nenhum tipo de poderes mágicos, seus ataques geralmente são corpo a corpo, sejam eles de longo (arco) ou curto (espada) alcance. </p>
+        </article>
+
+        <form action="lista-campeoes" method="post">
+            <div class="text" id="spc">
+                <label for="nome">Nome: </label>
+                <input class="input" type="text" name="nome" id="nome" placeholder="Nome do campeão" required>
+            </div>
+
+            <div class="text">
+                <label for="idade">Idade: </label>
+                <input class="input" type="number" name="idade" id="idade" placeholder="Idade do campeão" required>
+            </div>
+
+            <div class="text">
+                <label for="genero">Gênero: </label>
+                <input class="input" type="text" name="genero" id="genero" placeholder="Gênero do campeão" required>
+            </div>
+
+            <div class="text">
+                <label>Dano:</label>
+                <select class="input" name="dano" id="dano" onchange="changeSelect();">
+                    <option value="">Selecione o tipo de dano</option>
+                    <option value="fisico">Físico</option>
+                    <option value="magico">Mágico</option>
+                </select>
+            </div>
+    
+            <div class="text">
+                <label>Arma:</label>
+                <select class="input" name="arma" id="arma">      
+                    <option value="">Selecione uma arma</option>  
+                </select>
+            </div>  
+            
+            <div class="text">
+                <label for="imagem">Imagem: </label>
+                <input class="input" type="text" name="imagem" id="imagem" placeholder="Link da imagem" required>
+            </div>
+
+
+          <script type="text/javascript">
+            function changeSelect(){
+    
+                var select = document.getElementById('dano');
+                var selectSetor = document.getElementById('arma');
+    
+                var value = select.options[select.selectedIndex].value;
+                     
+                var length = selectSetor.options.length;        
+                var i;
+                for(i = selectSetor.options.length-1 ; i>=0 ; i--)
+                {
+                    selectSetor.remove(i);
+                }
+    
+                if(value == 'magico') {
+                
+                    var option1 = document.createElement('option');
+                    option1.value = '1';
+                    option1.text = '';
+
+                    var option2 = document.createElement('option');
+                    option2.value = 'Cajado';
+                    option2.text = 'Cajado';
+    
+                    var option3 = document.createElement('option');
+                    option3.value = 'Varinha';
+                    option3.text = 'Varinha';
+    
+                    var option4 = document.createElement('option');
+                    option4.value = 'Livro de feitiços';
+                    option4.text = 'Livro de feitiços';
+    
+                    selectSetor.add(option1);
+                    selectSetor.add(option2);
+                    selectSetor.add(option3);
+                    selectSetor.add(option4);
+    
+                } else if (value == 'fisico'){
+
+                    var option5 = document.createElement('option');
+                    option5.value = '5';
+                    option5.text = '';
+    
+                    var option6 = document.createElement('option');
+                    option6.value = 'Lança';
+                    option6.text = 'Lança';
+    
+                    var option7 = document.createElement('option');
+                    option7.value = 'Espada';
+                    option7.text = 'Espada';
+    
+                    var option8 = document.createElement('option');
+                    option8.value = 'Arco e flecha';
+                    option8.text = 'Arco e flecha';
+    
+                    selectSetor.add(option5);
+                    selectSetor.add(option6);
+                    selectSetor.add(option7);
+                    selectSetor.add(option8);
+    
+                }   
+            }
+              </script>
+
+            <button type="submit" id="btn1"> Cadastrar </button>
+
+        </form>
+    </main>
+
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

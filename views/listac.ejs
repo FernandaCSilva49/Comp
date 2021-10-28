@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" href="./img/comp.png"/>
+
+    <title> Comp | Lista Campeões</title>
+</head>
+
+<body id="bodylc">
+
+    <header id="headerlc" >
+        <div>
+            <img src="../img/comp3.png" width="90" height="80">
+        </div>
+        <div id="divlc">
+            <a class="btnclc" href="/cadastro"> Cadastro </a></button> 
+            <p class="btnclc"> | </p>
+            <a class="btnclc" id="home" href="/"> Home </a></button> 
+        </div>
+    </header>
+
+    <div id="divs">
+        
+       
+        <% if(msg != "") {  %>
+            <section id="msg" style="background-color: white; padding: 1rem;">
+                <p id="msgp"><%= msg %> <span id="close">&times;</span> </p>
+            </section>
+        <% }  %>
+
+        <h1 style="color: white; margin-top: 2rem;">Lista de Campeões</h1>
+
+        <article id="cards">
+        
+        <% campeoes.forEach(item => { %>
+            <figure class="cardl"><a href="/detalhes/<%= item.id %>">
+                <img class="imgl" src="<%= item.imagem %>" width="230" height="280">
+                <div class="detat"> Nome:  <%= item.nome %> </div>
+                <div class="detab"> Dano:  <%= item.dano %> </div></a>
+            </figure>
+            <% }) %>
+        
+        
+
+            
+        </article>
+</div>
+    
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
